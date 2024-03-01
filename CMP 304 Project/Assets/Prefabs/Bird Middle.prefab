@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b31150f6a9120468303af7524caa95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventHandler: {fileID: 11400000, guid: f69a87463060f19479059e73cf2edd0c, type: 2}
+  hazardType: 2
 --- !u!50 &5125054097606632593
 Rigidbody2D:
   serializedVersion: 4
@@ -171,7 +173,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.64, y: 0.4}
   m_EdgeRadius: 0
 --- !u!114 &982872089703398920
 MonoBehaviour:
@@ -185,3 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57de86239295495459b4e7bcf8d45758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventHandler: {fileID: 11400000, guid: f69a87463060f19479059e73cf2edd0c, type: 2}

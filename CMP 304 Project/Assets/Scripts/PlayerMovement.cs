@@ -6,27 +6,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] GameObject playerStanding, playerDucking;
+    [SerializeField] EventHandler eventHandler;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        eventHandler.killPlayer.AddListener(Die);
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            Duck();
-        } else
-        {
-            Stand();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
         
     }
 
@@ -45,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
+        Stand();
         rb.AddForceY(400);
+    }
+
+    void Die()
+    {
+        transform.position = new Vector2(0, 0);
     }
 }

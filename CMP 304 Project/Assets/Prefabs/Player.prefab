@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 3802761871215923266}
   - component: {fileID: 4700525562887518751}
   - component: {fileID: 6138872241202759331}
+  - component: {fileID: 2673861085410190070}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -299,6 +300,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStanding: {fileID: 2826885801103201810}
   playerDucking: {fileID: 9032195189190966538}
+  eventHandler: {fileID: 11400000, guid: f69a87463060f19479059e73cf2edd0c, type: 2}
+--- !u!114 &2673861085410190070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799590401514132395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c7e9ce799a53244992d233a2401f8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventHandler: {fileID: 11400000, guid: f69a87463060f19479059e73cf2edd0c, type: 2}
+  hazardTypes: 5
+  actionTypes: 3
+  learningRate: 0.1
+  discountFactor: 0.8
+  positiveReward: 10
+  negativeReward: -100
+  oddsToRandomise: 20
 --- !u!1 &9032195189190966538
 GameObject:
   m_ObjectHideFlags: 0

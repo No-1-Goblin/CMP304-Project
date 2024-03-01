@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class TriggerResponse : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    Brain brain;
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = GetComponentInParent<PlayerMovement>();
+        brain = GetComponentInParent<Brain>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Hazard"))
         {
-            playerMovement.Jump();
+            brain.AlertBrain(collision.gameObject.GetComponent<HazardAI>().hazardType);
         }
     }
 }
