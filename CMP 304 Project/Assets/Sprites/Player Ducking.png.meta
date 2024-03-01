@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Player Ducking_0: -4155753489318106822
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

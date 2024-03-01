@@ -45,6 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        rb.AddForceY(1000);
+        rb.AddForceY(400);
     }
 }
