@@ -16,5 +16,10 @@ public class MoveLeft : MonoBehaviour
     {
         rb.velocity = Vector3.zero;
         rb.velocityX = -5;
+
+        if (transform.position.x < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
