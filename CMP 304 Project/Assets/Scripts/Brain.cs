@@ -67,6 +67,10 @@ public class Brain : MonoBehaviour
             {
                 bestAction = new((Actions)i, Q[(int)hazard, i]);
             }
+            else if (Q[(int)hazard, i] == bestAction.Item2)
+            {
+                bestAction = UnityEngine.Random.Range(0, 2) == 0 ? bestAction : new((Actions)i, Q[(int)hazard, i]);
+            }
         }
         return bestAction;
     }
