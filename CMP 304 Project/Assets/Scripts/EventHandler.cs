@@ -8,4 +8,5 @@ public class EventHandler : ScriptableObject
 {
     public UnityEvent<bool> awardPoints;
     public UnityEvent killPlayer;
+    public UnityEvent resetGame;
 }

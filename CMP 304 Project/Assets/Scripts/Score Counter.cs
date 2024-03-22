@@ -13,6 +13,7 @@ public class ScoreCounter : MonoBehaviour
     {
         eventHandler.awardPoints.AddListener(AddScore);
         eventHandler.killPlayer.AddListener(ResetScore);
+        eventHandler.resetGame.AddListener(ResetScore);
         text.text = "Score: " + score;
     }
 

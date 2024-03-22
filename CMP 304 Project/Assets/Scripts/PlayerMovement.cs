@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         eventHandler.killPlayer.AddListener(Die);
+        eventHandler.resetGame.AddListener(Die);
         rb = GetComponent<Rigidbody2D>();
     }
 

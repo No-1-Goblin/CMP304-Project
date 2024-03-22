@@ -12,12 +12,19 @@ public class DeathCounter : MonoBehaviour
     void Start()
     {
         eventHandler.killPlayer.AddListener(AddDeath);
+        eventHandler.resetGame.AddListener(ResetDeaths);
         text.text = "Deaths: " + deaths;
     }
 
     void AddDeath()
     {
         deaths++;
+        text.text = "Deaths: " + deaths;
+    }
+
+    void ResetDeaths()
+    {
+        deaths = 0;
         text.text = "Deaths: " + deaths;
     }
 }

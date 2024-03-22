@@ -13,6 +13,7 @@ public class HazardAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         eventHandler.killPlayer.AddListener(OnPlayerDeath);
+        eventHandler.resetGame.AddListener(OnPlayerDeath);
     }
 
     // Update is called once per frame

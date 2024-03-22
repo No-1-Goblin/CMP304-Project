@@ -22,6 +22,7 @@ public class Brain : MonoBehaviour
         // Setup event handler listeners
         eventHandler.awardPoints.AddListener(AssignReward);
         eventHandler.killPlayer.AddListener(RemoveRandomness);
+        eventHandler.resetGame.AddListener(ResetBrain);
         // Get player movement component
         playerMovement = GetComponent<PlayerMovement>();
         // Reset brain
@@ -133,7 +134,7 @@ public class Brain : MonoBehaviour
 
     void RemoveRandomness()
     {
-        if (oddsToRandomise != 0)
+        if (oddsToRandomise > 0)
         {
             oddsToRandomise -= 5;
         } else
