@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Brain : MonoBehaviour
 {
     [SerializeField] EventHandler eventHandler;
     [SerializeField] int hazardTypes, actionTypes;
     [SerializeField] float learningRate = 0.1f, discountFactor = 0.8f, positiveReward = 10, negativeReward = -100;
+    [SerializeField] Slider learningRateSlider, discountFactorSlider;
+    [SerializeField] Text learningRateText, discountFactorText;
     PlayerMovement playerMovement;
     float[,] Q;
     ApproachingHazards lastHazard;
@@ -23,12 +26,27 @@ public class Brain : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         // Reset brain
         ResetBrain();
+        ReadSliders();
+        RefreshVisuals();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ReadSliders();
+        RefreshVisuals();
+    }
+
+    void ReadSliders()
+    {
+        learningRate = learningRateSlider.value;
+        discountFactor = discountFactorSlider.value;
+    }
+
+    void RefreshVisuals()
+    {
+        learningRateText.text = "Learning Rate: " + learningRate.ToString("0.00");
+        discountFactorText.text = "Discount Factor: " + discountFactor.ToString("0.00");
     }
 
     public void ResetBrain()
