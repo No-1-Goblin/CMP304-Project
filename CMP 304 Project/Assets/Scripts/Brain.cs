@@ -9,8 +9,8 @@ public class Brain : MonoBehaviour
     [SerializeField] EventHandler eventHandler;
     [SerializeField] int hazardTypes, actionTypes;
     [SerializeField] float learningRate = 0.1f, discountFactor = 0.8f, positiveReward = 10, negativeReward = -100;
-    [SerializeField] Slider learningRateSlider, discountFactorSlider;
-    [SerializeField] Text learningRateText, discountFactorText;
+    [SerializeField] Slider learningRateSlider, discountFactorSlider, randomisedOddsSlider;
+    [SerializeField] Text learningRateText, discountFactorText, randomisedOddsText, currentRandomText;
     PlayerMovement playerMovement;
     float[,] Q;
     ApproachingHazards lastHazard;
@@ -48,13 +48,15 @@ public class Brain : MonoBehaviour
     {
         learningRateText.text = "Learning Rate: " + learningRate.ToString("0.00");
         discountFactorText.text = "Discount Factor: " + discountFactor.ToString("0.00");
+        randomisedOddsText.text = "Initial Randomised\nOdds: " + randomisedOddsSlider.value + "%";
+        currentRandomText.text = "Current Chance Of\nRandom Action: " + oddsToRandomise + "%";
     }
 
     public void ResetBrain()
     {
         // Reset Q matrix
         Q = new float[hazardTypes, actionTypes];
-        oddsToRandomise = 20;
+        oddsToRandomise = (int)randomisedOddsSlider.value;
     }
 
     public void AlertBrain(ApproachingHazards newHazard)
@@ -139,7 +141,7 @@ public class Brain : MonoBehaviour
             oddsToRandomise -= 5;
         } else
         {
-            oddsToRandomise = 20;
+            oddsToRandomise = (int)randomisedOddsSlider.value;
         }
     }
 }
