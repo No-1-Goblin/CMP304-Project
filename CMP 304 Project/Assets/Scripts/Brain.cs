@@ -25,7 +25,7 @@ public class Brain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void ResetBrain()
@@ -90,6 +90,7 @@ public class Brain : MonoBehaviour
                 break;
         }
         actionTaken = actionToTake;
+        Debug.Log("Approaching hazard was a: " + lastHazard);
         Debug.Log("I chose to " + actionTaken);
     }
 
